@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SampleDDS</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+<script>
+$(document).ready(function(){
+ setTimeout(function(){
+   $('.carousel').slick({
+    lazyLoad: 'ondemand',
+  });
+}, 500);
+var myVar =setInterval(function(){  $('.btnNextSlick').trigger('click'); }, 100);
+setTimeout(function(){
+  clearInterval(myVar);
+}, 5000);
+
+});
+</script>
+</html>

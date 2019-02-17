@@ -1,0 +1,40 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<app-dds>Module call</app-dds>
+<div id="myDiv">
+<ngx-thumbnail-carousel class="carousel"
+#slickModal="slick-carousel"
+[config]="slideConfig"
+(init)="slickInit($event)"
+(breakpoint)="breakpoint($event)"
+(afterChange)="afterChange($event)"
+(beforeChange)="beforeChange($event)">
+<div ngxThumbnailItem *ngFor="let slide of slides" class="slide">
+  <div>
+      <pdf-viewer [src]="slide.img" style="display:block;" [zoom]="0.2"  [show-all]="false"
+      [page]="1"></pdf-viewer>
+      <!-- <pdf-viewer src="https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf"></pdf-viewer> -->
+      <!-- <img src="{{ slide.img }}" class="image" alt="" width="100%"> -->
+      <div class="overlay"> <a *ngIf="slide.isEditable"><i class="fa fa-edit"></i></a>  {{slide.imgTitle}}</div>
+  </div>
+</div>
+<div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</ngx-thumbnail-carousel>
+</div>
+<!-- <pdf-viewer src="https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf"></pdf-viewer> -->
+<!-- <pdf-viewer src="assets/sample.pdf" style="display:block;" [zoom]="0.4"  [show-all]="false"
+[page]="1"></pdf-viewer>
+<pdf-viewer src="assets/sample.pdf" style="display:block;" [zoom]="0.4"  [show-all]="false"
+[page]="1"></pdf-viewer> -->
+<button (click)="addSlide()">Add</button>
+<button (click)="removeSlide()">Remove</button>
+<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+<button (click)="slickModal.unslick()">unslick</button>
+<button>Prev</button>
+<button (click)="NextSlides()">Next</button>

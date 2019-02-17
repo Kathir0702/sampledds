@@ -1,0 +1,47 @@
+
+ .overlay {
+    position: absolute;
+    bottom: 0;
+    background: white;
+    width: 100%;
+    transition: .5s ease;
+    opacity: 1;
+    color: black;
+    font-size: 1.4rem;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    border: 1px solid;
+}
+  .slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    margin: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+.slick-slider {
+    display: flex;
+}
+.fa.slick-arrow {
+    font-size: 1.4rem;
+    padding: 4rem 0 4rem 1rem;
+}
+.fa.fa-arrow-left {
+
+    padding: 5rem 0 0 1rem;
+
+}
+#mydiv {
+    height: 400px;
+    position: relative;
+    background-color: gray; /* for demonstration */
+  }
+  .ajax-loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; /* presto! */
+  }
